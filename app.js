@@ -1,4 +1,3 @@
-// App functionality
 document.addEventListener('DOMContentLoaded', function() {
     // DOM elements - Main View
     const mainView = document.getElementById('main-view');
@@ -15,12 +14,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const destinationDetail = document.getElementById('destination-detail');
     const backButton = document.getElementById('back-button');
     
+    // DOM elements - Hero Header
+    const discoverBtn = document.getElementById('discover-btn');
+    const slideshowSlides = document.querySelectorAll('.slideshow-slide');
+    
+    // DOM elements - Footer
+    const regionLinks = document.querySelectorAll('.region-link');
+    const scrollTopBtn = document.getElementById('scroll-top');
+    
     let allDestinations = [...destinations]; // Kopie der Original-Daten
     let displayedDestinations = 0;
     const destinationsPerPage = 12;
+    let currentSlide = 0;
     
     // Initial alle Destinationen anzeigen
     filterAndDisplayDestinations();
+    
+    // Slideshow Animation
+    function nextSlide() {
+        slideshowSlides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slideshowSlides.length;
+        slideshowSlides[currentSlide].classList.add('active');
+    }
+    
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
     
     // Load more button click
     loadMoreBtn.addEventListener('click', function() {
@@ -49,6 +67,35 @@ document.addEventListener('DOMContentLoaded', function() {
     budgetFilter.addEventListener('change', filterAndDisplayDestinations);
     typeFilter.addEventListener('change', filterAndDisplayDestinations);
     sortOptions.addEventListener('change', filterAndDisplayDestinations);
+    
+    // CTA Button - Nach unten scrollen zum Destinations-Bereich
+    discoverBtn.addEventListener('click', function() {
+        document.getElementById('destinations-section').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Region links im Footer - Filtert nach Region und scrollt zum Destinations-Bereich
+    regionLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const region = this.getAttribute('data-region');
+            regionFilter.value = region;
+            filterAndDisplayDestinations();
+            document.getElementById('destinations-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    // Scroll to top button
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+    
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     
     // Funktion zum Filtern und Anzeigen der Destinationen
     function filterAndDisplayDestinations() {

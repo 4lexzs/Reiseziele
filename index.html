@@ -5,20 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weltreiseziel-Finder</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Hero Header mit Bildwechsler -->
+    <header class="hero-header">
+        <div class="slideshow-container">
+            <div class="slideshow-slide active"></div>
+            <div class="slideshow-slide"></div>
+            <div class="slideshow-slide"></div>
+            <div class="slideshow-slide"></div>
+            <div class="slideshow-overlay"></div>
+        </div>
         <div class="header-content">
             <h1>Weltreiseziel-Finder</h1>
-            <p>Entdecke Dein perfektes Reiseziel für die nächsten Ferien</p>
+            <p>Entdecke die schönsten Reiseziele rund um den Globus</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" id="discover-btn">Reiseziele entdecken</button>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hauptansicht mit allen Reisezielen -->
-        <section id="main-view" class="container">
-            <div id="destinations-section" class="destinations-section">
-                <h2>Alle Reiseziele</h2>
+        <section id="destinations-section" class="destinations-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Alle Reiseziele</h2>
+                    <p>Durchsuche unsere Sammlung der schönsten Orte der Welt</p>
+                </div>
+                
                 <div class="filter-controls">
                     <input type="text" id="search-input" placeholder="Reiseziel suchen...">
                     <select id="region-filter">
@@ -50,9 +66,47 @@
                         <option value="random">Zufällig</option>
                     </select>
                 </div>
+                
                 <div id="destinations-grid" class="destinations-grid"></div>
+                
                 <div class="button-container">
                     <button id="load-more-btn" class="btn">Mehr laden</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature-Bereich -->
+        <section id="features-section" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Informationen zu unseren Reisezielen</h2>
+                    <p>Entdecke detaillierte Informationen zu den schönsten Orten der Welt</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Kuratierte Ziele</h3>
+                        <p>Entdecke die schönsten Orte weltweit mit ausführlichen Beschreibungen und Hintergrundinfos.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Einfache Suche</h3>
+                        <p>Finde schnell genau das, was dich interessiert - nach Region, Budget oder Reiseart.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Umfassende Details</h3>
+                        <p>Erfahre alles über Geschichte, Sehenswürdigkeiten, Küche und praktische Reisetipps.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,11 +123,36 @@
         </section>
     </main>
 
+    <!-- Vereinfachter Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Weltreiseziel-Finder</p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Weltreiseziel-Finder</h3>
+                <p>Eine Sammlung der schönsten Reiseziele weltweit mit detaillierten Informationen.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Regionen</h3>
+                <ul class="regions-list">
+                    <li><a href="#" class="region-link" data-region="Europa">Europa</a></li>
+                    <li><a href="#" class="region-link" data-region="Asien">Asien</a></li>
+                    <li><a href="#" class="region-link" data-region="Afrika">Afrika</a></li>
+                    <li><a href="#" class="region-link" data-region="Nordamerika">Nordamerika</a></li>
+                    <li><a href="#" class="region-link" data-region="Südamerika">Südamerika</a></li>
+                    <li><a href="#" class="region-link" data-region="Ozeanien">Ozeanien</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Weltreiseziel-Finder - Alle Rechte vorbehalten</p>
         </div>
     </footer>
+
+    <!-- Schwebendes Action-Element -->
+    <div class="floating-cta" id="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script src="destinations.js"></script>
     <script src="app.js"></script>
