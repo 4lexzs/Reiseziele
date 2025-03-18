@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weltreiseziel-Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Weltreiseziel-Finder</h1>
+            <p>Entdecke Dein perfektes Reiseziel für die nächsten Ferien</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="destinations-section" class="destinations-section">
+            <h2>Alle Reiseziele</h2>
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="Reiseziel suchen...">
+                <select id="region-filter">
+                    <option value="all">Alle Regionen</option>
+                    <option value="Europa">Europa</option>
+                    <option value="Asien">Asien</option>
+                    <option value="Afrika">Afrika</option>
+                    <option value="Nordamerika">Nordamerika</option>
+                    <option value="Südamerika">Südamerika</option>
+                    <option value="Ozeanien">Ozeanien</option>
+                </select>
+                <select id="budget-filter">
+                    <option value="all">Alle Budgets</option>
+                    <option value="budget">Günstig</option>
+                    <option value="moderate">Mittel</option>
+                    <option value="luxury">Luxus</option>
+                </select>
+                <select id="type-filter">
+                    <option value="all">Alle Arten</option>
+                    <option value="city">Stadt</option>
+                    <option value="beach">Strand</option>
+                    <option value="nature">Natur</option>
+                    <option value="mountains">Berge</option>
+                </select>
+                <select id="sort-options">
+                    <option value="nameAsc">Name (A-Z)</option>
+                    <option value="nameDesc">Name (Z-A)</option>
+                    <option value="regionAsc">Region</option>
+                    <option value="random">Zufällig</option>
+                </select>
+            </div>
+            <div id="destinations-grid" class="destinations-grid"></div>
+            <div class="button-container">
+                <button id="load-more-btn" class="btn">Mehr laden</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Weltreiseziel-Finder</p>
+        </div>
+    </footer>
+
+    <script src="destinations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
