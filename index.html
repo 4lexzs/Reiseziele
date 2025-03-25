@@ -28,88 +28,90 @@
 
     <main>
         <!-- Hauptansicht mit allen Reisezielen -->
-        <section id="destinations-section" class="destinations-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Alle Reiseziele</h2>
-                    <p>Durchsuche unsere Sammlung der schönsten Orte der Welt</p>
+        <div id="main-view">
+            <section id="destinations-section" class="destinations-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Alle Reiseziele</h2>
+                        <p>Durchsuche unsere Sammlung der schönsten Orte der Welt</p>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <input type="text" id="search-input" placeholder="Reiseziel suchen...">
+                        <select id="region-filter">
+                            <option value="all">Alle Regionen</option>
+                            <option value="Europa">Europa</option>
+                            <option value="Asien">Asien</option>
+                            <option value="Afrika">Afrika</option>
+                            <option value="Nordamerika">Nordamerika</option>
+                            <option value="Südamerika">Südamerika</option>
+                            <option value="Ozeanien">Ozeanien</option>
+                        </select>
+                        <select id="budget-filter">
+                            <option value="all">Alle Budgets</option>
+                            <option value="budget">Günstig</option>
+                            <option value="moderate">Mittel</option>
+                            <option value="luxury">Luxus</option>
+                        </select>
+                        <select id="type-filter">
+                            <option value="all">Alle Arten</option>
+                            <option value="city">Stadt</option>
+                            <option value="beach">Strand</option>
+                            <option value="nature">Natur</option>
+                            <option value="mountains">Berge</option>
+                        </select>
+                        <select id="sort-options">
+                            <option value="nameAsc">Name (A-Z)</option>
+                            <option value="nameDesc">Name (Z-A)</option>
+                            <option value="regionAsc">Region</option>
+                            <option value="random">Zufällig</option>
+                        </select>
+                    </div>
+                    
+                    <div id="destinations-grid" class="destinations-grid"></div>
+                    
+                    <div class="button-container">
+                        <button id="load-more-btn" class="btn">Mehr laden</button>
+                    </div>
                 </div>
-                
-                <div class="filter-controls">
-                    <input type="text" id="search-input" placeholder="Reiseziel suchen...">
-                    <select id="region-filter">
-                        <option value="all">Alle Regionen</option>
-                        <option value="Europa">Europa</option>
-                        <option value="Asien">Asien</option>
-                        <option value="Afrika">Afrika</option>
-                        <option value="Nordamerika">Nordamerika</option>
-                        <option value="Südamerika">Südamerika</option>
-                        <option value="Ozeanien">Ozeanien</option>
-                    </select>
-                    <select id="budget-filter">
-                        <option value="all">Alle Budgets</option>
-                        <option value="budget">Günstig</option>
-                        <option value="moderate">Mittel</option>
-                        <option value="luxury">Luxus</option>
-                    </select>
-                    <select id="type-filter">
-                        <option value="all">Alle Arten</option>
-                        <option value="city">Stadt</option>
-                        <option value="beach">Strand</option>
-                        <option value="nature">Natur</option>
-                        <option value="mountains">Berge</option>
-                    </select>
-                    <select id="sort-options">
-                        <option value="nameAsc">Name (A-Z)</option>
-                        <option value="nameDesc">Name (Z-A)</option>
-                        <option value="regionAsc">Region</option>
-                        <option value="random">Zufällig</option>
-                    </select>
-                </div>
-                
-                <div id="destinations-grid" class="destinations-grid"></div>
-                
-                <div class="button-container">
-                    <button id="load-more-btn" class="btn">Mehr laden</button>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Feature-Bereich -->
-        <section id="features-section" class="features-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Informationen zu unseren Reisezielen</h2>
-                    <p>Entdecke detaillierte Informationen zu den schönsten Orten der Welt</p>
-                </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <h3>Kuratierte Ziele</h3>
-                        <p>Entdecke die schönsten Orte weltweit mit ausführlichen Beschreibungen und Hintergrundinfos.</p>
+            <!-- Feature-Bereich -->
+            <section id="features-section" class="features-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Informationen zu unseren Reisezielen</h2>
+                        <p>Entdecke detaillierte Informationen zu den schönsten Orten der Welt</p>
                     </div>
                     
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-filter"></i>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3>Kuratierte Ziele</h3>
+                            <p>Entdecke die schönsten Orte weltweit mit ausführlichen Beschreibungen und Hintergrundinfos.</p>
                         </div>
-                        <h3>Einfache Suche</h3>
-                        <p>Finde schnell genau das, was dich interessiert - nach Region, Budget oder Reiseart.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-info-circle"></i>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <h3>Einfache Suche</h3>
+                            <p>Finde schnell genau das, was dich interessiert - nach Region, Budget oder Reiseart.</p>
                         </div>
-                        <h3>Umfassende Details</h3>
-                        <p>Erfahre alles über Geschichte, Sehenswürdigkeiten, Küche und praktische Reisetipps.</p>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h3>Umfassende Details</h3>
+                            <p>Erfahre alles über Geschichte, Sehenswürdigkeiten, Küche und praktische Reisetipps.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Detail-Ansicht für ein einzelnes Reiseziel -->
         <section id="detail-view" class="container" style="display: none;">

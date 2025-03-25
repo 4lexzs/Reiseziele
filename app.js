@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Back button click
     backButton.addEventListener('click', function() {
         detailView.style.display = 'none';
-        mainView.style.display = 'block';
+        document.getElementById('main-view').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         // Show detail view and hide main view
-        mainView.style.display = 'none';
+        document.getElementById('main-view').style.display = 'none';
         detailView.style.display = 'block';
         
         // Scroll to top
